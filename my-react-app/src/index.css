@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap");
+* {
+  font-family: Inconsolata;
+  color: #424242;
+}
+body {
+  background-image: url(https://i.pinimg.com/736x/4e/99/d4/4e99d42c3f3ce4bf78f38d788a21ea23.jpg);
+}
+h1 {
+  font-family: "Playwrite GB J", serif;
+  padding: 20px;
+}
+p {
+  padding: 20px;
+}
+
+.hero-container {
+  display: flex;
+  width: 700px;
+  height: 500px;
+  position: absolute;
+  left: 750px;
+  top: 400px;
+  transform: translate(-50%, -50%);
+
+  background-color: hsl(34, 100%, 95%);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.title a {
+  font-family: "Playwrite GB J", serif;
+  position: absolute;
+  padding: 20px;
+  font-size: 20px;
+  background-color: #9c7057;
+  color: #424242;
+  padding: 20px;
+  text-align: center;
+  transform: translate(110px, -320px) rotate(3deg);
+  width: 200px;
+  height: 30px;
+  text-decoration: none;
+  left: 550px;
+  top: 430px;
+  z-index: 1000;
+}
+.sidebar {
+  height: 100%;
+  padding: 30px;
+  background-color: #f1e4dc;
+}
+
+.sidebar a {
+  text-decoration: none;
+  display: flex;
+  height: 30px;
+  padding: 5px 10px 5px 10px;
+  font-size: 16px;
+}
+
+.sidebar a:hover {
+  transform: translateX(5px);
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
