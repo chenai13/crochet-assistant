@@ -1,0 +1,25 @@
+.main {
+  max-height: 15rem;
+  overflow-y: auto;
+  padding: 10px;
+  width: 120%;
+  padding: 10px;
+}
+.controls {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.display {
+  font-size: 30px;
+  padding: 20px;
+}
+
+button:hover {
+  background-color: #f0dedc;
+}
+
+.main h1 {
+  padding-bottom: 0;
+}

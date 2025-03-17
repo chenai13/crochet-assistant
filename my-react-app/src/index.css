@@ -3,10 +3,13 @@
 * {
   font-family: Inconsolata;
   color: #424242;
-  
+  scrollbar-color: hsl(22, 28%, 48%) hsl(34, 100%, 95%);
+  scrollbar-width: thin;
 }
+
 body {
   background-image: url(https://i.pinimg.com/736x/4e/99/d4/4e99d42c3f3ce4bf78f38d788a21ea23.jpg);
+  
 }
 h1 {
   font-family: "Playwrite GB J", serif;
@@ -20,6 +23,7 @@ p {
   height: 100%;
   padding: 30px;
   background-color: #f1e4dc;
+  overflow-y: hidden;
 }
 
 .sidebar a {
@@ -28,6 +32,7 @@ p {
   height: 30px;
   padding: 5px 10px 5px 10px;
   font-size: 16px;
+  overflow: hidden;
 }
 
 .sidebar a:hover {
@@ -38,32 +43,31 @@ p {
   width: 700px;
   height: 500px;
   position: absolute;
-  left: 750px;
-  top: 400px;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
 
   background-color: hsl(34, 100%, 95%);
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 .title a {
   font-family: "Playwrite GB J", serif;
   position: absolute;
   padding: 20px;
   font-size: 20px;
-  background-color: #9c7057;
-  color: #424242;
+  background-color: hsl(22, 28%, 48%);
+  color: hsl(0, 0%, 26%);
   padding: 20px;
   text-align: center;
   transform: translate(110px, -320px) rotate(3deg);
   width: 200px;
   height: 30px;
   text-decoration: none;
-  left: 550px;
-  top: 430px;
+  left: 35%;
+  top: 53%;
   z-index: 1000;
 }
-
 
 img {
   width: 200px;

@@ -7,6 +7,8 @@ function Tracker({ children }) {
       <h1>tracker</h1>
       <p>this is where you can record your stitch count, rows, and more.</p>
       <hr></hr>
+
+      
     </>
   );
   return <Hero>{content}</Hero>;
