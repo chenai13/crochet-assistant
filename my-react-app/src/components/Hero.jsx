@@ -16,9 +16,7 @@ function Hero({ children }) {
             <li>
               <Link to="/projects">projects</Link>
             </li>
-            <li>
-              <Link to="/tracker">tracker</Link>
-            </li>
+            
             <li>
               <Link to="/timer">timer</Link>
             </li>
@@ -27,7 +25,7 @@ function Hero({ children }) {
             </li>
           </ul>
         </div>
-        <div className="main">{children}</div>
+        <div className="mainy">{children}</div>
       </div>
     </main>
   );

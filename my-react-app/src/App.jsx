@@ -4,8 +4,7 @@ import Home from "./pages/home";
 import Projects from "./pages/projects";
 import Timer from "./pages/timer";
 import About from "./pages/about";
-import Tracker from "./pages/tracker";
-import "./index.css"
+import "./index.css";
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/timer" element={<Timer />} />
         <Route path="/about" element={<About />} />
-        <Route path="/tracker" element={<Tracker />} />
       </Routes>
     </BrowserRouter>
   );

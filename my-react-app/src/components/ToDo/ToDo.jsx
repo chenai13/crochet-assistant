@@ -1,55 +1,74 @@
-import React, { useState } from "react";
-import styles from "./ToDo.module.css";
+import React, { useState, useEffect } from "react";
+import styles from "./ToDo.module.css"
 
 function ToDo() {
-  const [tasks, setTasks] = useState([
-    "Eat Breakfast",
-    "Take a Shower",
-    "Walk the Dog",
-  ]);
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+    return savedTasks && savedTasks.length > 0
+      ? savedTasks
+      : ["plushie", "scarf", "blanket"];
+  });
+  
 
-  const [newTask, setNeWTask] = useState("");
+  const [newTask, setNewTask] = useState("");
+  const [addedTasks, setAddedTasks] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function handleInputChange(event) {
-    setNeWTask(event.target.value);
+    setNewTask(event.target.value);
   }
 
   function addTask() {
     if (newTask.trim() !== "") {
-      setTasks((t) => [...t, newTask]);
-      setNeWTask = "";
+      const updatedTasks = [...tasks, newTask];
+      setTasks(updatedTasks);
+      setNewTask("");
     }
   }
+
   function deleteTask(index) {
-    const UpdatedTasks = tasks.filter((_, i) => i !== index);
-    setTasks(UpdatedTasks);
+    const updatedTasks = tasks.filter((_, i) => i !== index);
+    setTasks(updatedTasks);
+    onTasksUpdate(updatedTasks);
   }
 
   function moveTaskUp(index) {
     if (index > 0) {
-      const UpdatedTasks = [...tasks];
-      [UpdatedTasks[index], UpdatedTasks[index - 1]] = [
-        UpdatedTasks[index - 1],
-        UpdatedTasks[index],
-      ]; setTasks(UpdatedTasks);
+      const updatedTasks = [...tasks];
+      [updatedTasks[index], updatedTasks[index - 1]] = [
+        updatedTasks[index - 1],
+        updatedTasks[index],
+      ];
+      setTasks(updatedTasks);
     }
   }
 
   function moveTaskDown(index) {
     if (index < tasks.length - 1) {
-      const UpdatedTasks = [...tasks];
-      [UpdatedTasks[index], UpdatedTasks[index + 1]] = [
-        UpdatedTasks[index + 1],
-        UpdatedTasks[index],
-      ]; setTasks(UpdatedTasks);
+      const updatedTasks = [...tasks];
+      [updatedTasks[index], updatedTasks[index + 1]] = [
+        updatedTasks[index + 1],
+        updatedTasks[index],
+      ];
+      setTasks(updatedTasks);
+    }
+  }
+
+  function addToCounter(task) {
+    if (!addedTasks.includes(task)) {
+      setAddedTasks([...addedTasks, task]);
     }
   }
 
   return (
     <>
-      <div main className={styles.main}>
+      <div main className={styles.maint}>
         <div className={styles["to-do"]}>
           <h1>to-do</h1>
+          <p>type in your project name.</p>
           <input
             type="text"
             placeholder="project name"
@@ -74,13 +93,13 @@ function ToDo() {
                 className={styles["moveup-button"]}
                 onClick={() => moveTaskUp(index)}
               >
-                👆
+                ⬆
               </button>
               <button
                 className={styles["movedown-button"]}
                 onClick={() => moveTaskDown(index)}
               >
-                👇
+                ⬇
               </button>
             </li>
           ))}
